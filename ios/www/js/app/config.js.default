@@ -1,0 +1,25 @@
+/**
+ * 設定ファイル
+ *
+ * @author tikitikipoo
+ * @lisence MIT
+ */
+
+ToyPhoto.debug = false;
+ToyPhoto.storageKey = "toy_photo_storagekey";
+
+ToyPhoto.twitter = {};
+ToyPhoto.twitter.consumer_key    = "";
+ToyPhoto.twitter.consumer_secret = "";
+
+ToyPhoto.twitpic = {};
+ToyPhoto.twitpic.api_key = "";
+
+ToyPhoto.my_server_url = "";
+ToyPhoto.my_server_secret = "";
+
+ToyPhoto.public_type = 1;
+ToyPhoto.favorite_type = 2;
+ToyPhoto.my_type = 3;
+
+ToyPhoto.time_threshold = 300000;

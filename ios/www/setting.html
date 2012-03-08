@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title></title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+	<meta charset="utf-8">
+
+    <link rel="stylesheet" href="css/jquery.mobile-1.0.css" />
+    <link rel="stylesheet" href="css/app.css" />
+	<!-- iPad/iPhone specific css below, add after your main css >
+	<link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />		
+	<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />		
+	-->
+  </head>
+  <body onload="onBodyLoad()">
+      
+      <!-- 設定 -->
+      
+      <div data-role="page" id="setting">
+          
+          <div data-role="header">
+              <h1>ヘダー</h1>
+          </div>
+          
+          <div data-role="content">
+              <div data-role="controlgroup">
+                  <div data-role=button id='logout'>Logout!</div>
+              </div>
+              
+              <a href="gallery.html" data-transition="none" >ギャラリーへ</a>
+              <a href="favorite.html" data-transition="none" >お気に入りへ</a>
+              <a href="action.html" data-transition="none" >カメラへ</a>
+              <a href="my.html" data-transition="none" >自分投稿へ</a>
+                                                                                              <div data-role=button data-inline="true" id='twitter-login'>Twitter Login</div>   
+                                                                                              <div data-role=button data-inline="true" id='cancel'>Cancel Twitter Session</div>   
+          </div>
+          
+      </div>
+      
+      <!-- /設定 -->
+      
+  </body>
+</html>

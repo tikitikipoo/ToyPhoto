@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>POST</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+	<meta charset="utf-8">
+  </head>
+  <body>
+
+      <!-- 写真投稿 -->
+      
+      <div data-role="page" id="action">
+          
+          <div data-role="header">
+              <h1>ヘダー</h1>
+
+              <!--
+              <a href="tweet-dialog.html" data-transition="pop" data-rel="dialog" id="post-btn" class="ui-btn-right" data-icon="gear" data-iconpos="notext" ></a> 
+              -->
+
+              <a href="#" id="post-btn" class="ui-btn-right" data-icon="gear" data-iconpos="notext" ></a>
+          </div>
+          
+          <div data-role="content">
+              
+              <section>
+
+                  <section>
+                      <div data-role="controlgroup">
+                          <div data-role=button id='tweet'>Tweet!</div>
+                      </div>
+                  </section>
+                  
+                  <section>
+
+                      <img id="small-image" src="css/images/default-camera-icon.jpeg" />
+                      <span id="textcount"></span>
+                      <textarea id="tweettextarea" rows="2" cols="30"></textarea>
+                      <label for="tweet-flg">tweet:</label>
+                      <select name="slider" id="tweet-flg" data-role="slider" data-theme="a">
+                        <option value="no" selected>No</option>
+                        <option value="yes">Yes</option>
+                      </select> 
+                  </section>
+
+                                                                                                  <p>PCデバッグ用</p>
+                                                                                                  <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
+                  <div data-role="controlgroup">
+                      <div data-role=button id='twitpic-upload-debug'>Upload!</div>
+                  </div>
+                  
+              </section>
+              <a href="gallery.html" data-transition="none" >ギャラリーへ</a>
+              <a href="favorite.html" data-transition="none" >お気に入りへ</a>
+              <a href="my.html" data-transition="none" >自分投稿へ</a>
+              <a href="setting.html" data-transition="none" >設定へ</a>
+          </div>
+          
+      </div>
+      
+      <!-- /写真投稿 -->
+      
+  </body>
+</html>

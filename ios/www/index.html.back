@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title></title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+	<meta charset="utf-8">
+
+    <link rel="stylesheet" href="css/jquery.mobile-1.0.css" />
+    <link rel="stylesheet" href="css/app.css" />
+	<!-- iPad/iPhone specific css below, add after your main css >
+	<link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />		
+	<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />		
+	-->
+	<!-- If your application is targeting iOS BEFORE 4.0 you MUST put json2.js from http://www.JSON.org/json2.js into your www directory and include it here -->
+    <script type="text/javascript" charset="utf-8" src="js/app/namespace.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app/config.js"></script>
+	<script type="text/javascript" charset="utf-8" src="phonegap-1.3.0.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/plugin/NativeControls.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/plugin/ChildBrowser.js"></script>
+    <!-- <script type="text/javascript" charset="utf-8" src="js/vendor/jquery-1.7.1.js"></script> -->
+    <script type="text/javascript" charset="utf-8" src="js/vendor/jquery-1.6.4.js"></script> 
+    <script type="text/javascript" charset="utf-8" src="js/app/jquery-mobile-init.js"></script> 
+    <script type="text/javascript" charset="utf-8" src="js/vendor/jquery.mobile-1.0.js"></script>
+        
+    <script type="text/javascript" charset="utf-8" src="js/vendor/oauth.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/vendor/sha1.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/lib/common.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/lib/database.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/lib/dao.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/lib/collection.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/lib/twitterBase.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/lib/twitter.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/lib/twitpic.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/widget/gallery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/widget/galleryDetail.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/widget/action.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/widget/setting.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app/app.js"></script>
+
+    <script type="text/javascript">
+
+
+	// If you want to prevent dragging, uncomment this section
+	/*
+	function preventBehavior(e) 
+	{ 
+      e.preventDefault(); 
+    };
+	document.addEventListener("touchmove", preventBehavior, false);
+	*/
+	
+	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
+	see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+	for more details -jm */
+	/*
+	function handleOpenURL(url)
+	{
+		// TODO: do something with the url passed in.
+	}
+	*/
+	
+	function onBodyLoad()
+	{		
+        document.addEventListener("deviceready", onDeviceReady, false);
+	}
+	
+	/* When this function is called, PhoneGap has been initialized and is ready to roll */
+	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
+	see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+	for more details -jm */
+	function onDeviceReady()
+	{
+        window.AppInstance = new ToyPhoto.App();
+        AppInstance.run();
+	}
+    
+    </script>
+  </head>
+  <body onload="onBodyLoad()">
+
+
+      <!-- ギャラリー -->
+      
+      <div data-role="page" id="gallery">
+          
+          <div data-role="header">
+              <h1>ヘダー</h1>
+          </div>
+          
+          <div data-role="content">
+              
+              <div id="gallery_content" class="gallery_content">
+
+                  <div id="tmpl" style="display:none;">
+                      <div class="photo">
+                          <a class="image_a" > 
+                              <img class="image" /> 
+                          </a>
+                      </div>
+                  </div>
+
+              </div>
+
+              <a href="#camera" data-transition="none" >カメラへ</a>
+              <a href="#setting" data-transition="none" >設定</a>
+          </div>
+
+      </div>
+          
+      <!-- /ギャラリー -->
+      
+      
+      <!-- 写真詳細 -->
+      
+      <div data-role="page" id="detail" data-add-back-btn="true">
+          
+          <div data-role="header">
+              <h1>ヘダー</h1>
+          </div>
+          
+          <div data-role="content" id="kari-detail-content">
+              
+              <a href="#gallery" data-transition="none" >ギャラリーへ</a>
+              <a href="#setting" data-transition="none" >設定へ</a>
+          </div>
+          
+      </div>
+      
+      <!-- /写真詳細 -->
+      
+      <!-- お気に入り -->
+      
+      <div data-role="page" id="favorite">
+          
+          <div data-role="header">
+              <h1>ヘダー</h1>
+          </div>
+          
+          <div data-role="content">
+              
+          </div>
+          
+      </div>
+      
+      <!-- /お気に入り -->
+
+      
+      <!-- 写真投稿 -->
+      
+      <div data-role="page" id="camera">
+          
+          <div data-role="header">
+              <h1>ヘダー</h1>
+          </div>
+          
+          <div data-role="content">
+              
+              
+              <section>
+                  <p>写真選択</p>
+                  <div data-role=button id='photo-library'>Camera</div>
+                  
+                  <p>写真撮影</p>
+                  <div data-role=button id='take-camera'>Camera</div>
+                  
+                  <section>
+                      <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+                  </section>
+
+                                                                                                  <p>PCデバッグ用</p>
+                                                                                                  <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
+                  <div data-role="controlgroup">
+                      <div data-role=button id='upload'>Upload!</div>
+                  </div>
+                  
+              </section>
+              <a href="#gallery" data-transition="none" >ギャラリーへ</a>
+              <a href="#setting" data-transition="none" >設定へ</a>
+          </div>
+          
+      </div>
+      
+      <!-- /写真投稿 -->
+      
+      <!-- My -->
+      
+      <div data-role="page" id="my">
+          
+          <div data-role="header">
+              <h1>ヘダー</h1>
+          </div>
+          
+          <div data-role="content">
+              
+          </div>
+          
+      </div>
+      
+      <!-- /My -->
+      
+      <!-- 設定 -->
+      
+      <div data-role="page" id="setting">
+          
+          <div data-role="header">
+              <h1>ヘダー</h1>
+          </div>
+          
+          <div data-role="content">
+              <div data-role="controlgroup">
+                  <div data-role=button id='logout'>Logout!</div>
+              </div>
+              
+              <a href="#gallery" data-transition="none" >ギャラリーへ</a>
+              <a href="#camera" data-transition="none" >カメラへ</a>
+                                                                                              <div data-role=button data-inline="true" id='cancel'>Cancel Twitter Session</div>   
+          </div>
+          
+      </div>
+      
+      <!-- /設定 -->
+      
+  </body>
+</html>

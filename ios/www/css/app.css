@@ -1,0 +1,25 @@
+
+div.photo_content {
+    float: left;
+    width: 100%;
+}
+
+div.photo {
+    float: left;
+    margin-left: 3px;
+    margin-bottom: 3px;
+    width: 93px;
+    height: 93px;
+    position: relative;
+    overflow: hidden;
+}
+
+    div.photo img {
+        display:block;
+    }
+
+img#small-image {
+    width : 90px;
+    height: 80px;
+}
+
